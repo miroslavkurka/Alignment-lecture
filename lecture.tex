@@ -1,0 +1,89 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\title{Sequence Alignment}
+\author{M. Kurka} 
+\usetheme{Frankfurt}
+\usecolortheme{spruce}
+\logo{includegraphics{logoupjscb.jpeg}}
+\begin{document}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{green},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\maketitle
+\section{Overview}
+\begin{frame}
+\begin{itemize}
+    \item Rationale Behind 
+    \item Scoring System 
+    \item Needleman-Wunsch Algorithm
+    \item Smith-Waterman Algorithm
+    \item What to do if more? 
+    \item Conclusion
+\end{itemize}
+\end{frame}
+
+\section{Rationale Behind}
+\begin{frame}
+\frametitle{Why is it useful}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Keeping Scores}
+        \begin{itemize}
+            \item model robený na presnosť trajektorie
+            \item fit je iný než kvadratický  
+            \item košík sa nám neotáča
+            \item aerodynamické vlastnosti košíku
+        \end{itemize}
+        
+\end{frame}
+
+\section{Needleman-Wunsch Algorithm}
+
+\begin{frame}
+\lstinputlisting[language=Python]{nw_alg.py}
+\end{frame}
+
+
+
+\section{Smith-Waterman Algorithm}
+\begin{frame}
+\frametitle{Smith-Waterman Algorithm}
+\begin{itemize}
+    \item Ziskavanie dát z fyzikálneho javu (Coach)
+    \item Vytvárať fyzikálne modely nad týmito dátami
+    \item Vieme že model nebude zodpovedať vždy realite 
+\end{itemize}    
+
+   
+   
+
+\end{frame}
+\end{document}
