@@ -3,11 +3,16 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{caption}
+\captionsetup[figure]{font=tiny}
 
 \title{Central Dogma of Molecular Biology}
 \author{M. Kurka} 
+\institute{github.com/miroslavkurka/Alignment-lecture}
 \usetheme{Frankfurt}
 \usecolortheme{spruce}
+\setbeamertemplate{itemize/enumerate body begin}{\small}
+
 \begin{document}
 
 
@@ -24,12 +29,58 @@
         \item Conclusion
     \end{itemize}
 \end{frame}
+\section{DNA}
 \begin{frame}
-    abcd
+
+\frametitle{What is DNA?}
+\begin{exampleblock}{DNA}
+    DNA is long linear polymer that carry information in a form that can be passed from one generation to the next. DNA consist of a large number of linked nucleotides, each
+composed of a sugar, a phosphate, and a base. Sugars linked by phosphates form a common backbone that plays a structural role, whereas the sequence of bases along a nucleic acid strand carries genetic information.
+\end{exampleblock}
+\begin{exampleblock}{}
+    nucleotides $\approx$ bytes 
+\end{exampleblock}
 \end{frame}
-\section{Dogma which holds}
+
+\section{Protein}
 \begin{frame}
-\frametitle{Crick's paper}
+\frametitle{What is a Protein?}
+\begin{exampleblock}{Protein}
+    Proteins are linear polymers built of monomer units called amino acids. The sequence of linked amino acids is called the primary structure. Proteins spontaneously fold up into three-dimensional structures that are determined by the sequence of amino acids in the protein polymer. Three-dimensional structure formed by hydrogen bonds between amino acids near one another is called secondary structure, whereas tertiary structure is formed by long-range interactions between amino acids. Protein function depends directly on this three- dimensional structure 
+\end{exampleblock}
+\begin{exampleblock}{}
+protein $\approx$ function
+    
+\end{exampleblock}
+\end{frame}
+\section{Sequence}
+\begin{frame}[fragile]
+\frametitle{What are Sequences?}
+
+\begin{exampleblock}{DNA sequence}
+$$X  = x_1 x_2...x_n, \; x_i \in \{ C,A,G,T \} $$
+\end{exampleblock}
+
+\end{frame}
+
+\section{Dogma}
+\begin{frame}[fragile]
+\frametitle{Central Dogma}
+\begin{exampleblock}{}
+DNA makes RNA, and RNA makes protein
+\end{exampleblock}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{stryer.png}
+\caption[scale=0.4]{Page from Berg JM, Tymoczko JL, Stryer L. Biochemistry, describing the dogma.}
+
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{The Actual Dogma}
 \begin{exampleblock}{}
     {\large ``The central dogma of molecular biology deals with the detailed
     residue-by-residue transfer of sequential information. It states
@@ -40,7 +91,55 @@
 \end{exampleblock}
 \footnotetext[1]{CRICK, F. Central Dogma of Molecular Biology. Nature 227, 561–563 (1970).}
 \begin{itemize}
-    \item a
+    \item Postulated in 1958 paper
+    \item Restated by Crick in 1970 as a response to Temin's paper\footnote[2]{TEMIN, H. Central Dogma Reversed. Nature 226, 1198–1199 (1970)}
+    \item The common misconception comes from Watson's 1965 text
 \end{itemize}
 \end{frame}
+\begin{frame}[fragile]
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{1958.png}
+\caption{Archived copy of the 1958 paper from Cold Spring Harbor}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{The Actual Dogma}
+First divided into 3 categories 
+\begin{itemize}
+    \item Empirically adequate: DNA $\rightarrow$ DNA, DNA $\rightarrow$ RNA, RNA $\rightarrow$ Protein, RNA $\rightarrow$ RNA
+    \item Presumed (due to RNA viruses): RNA $\rightarrow$ DNA, DNA $\rightarrow$ Protein
+    \item No evidence nor theoretical requirement: Protein $\rightarrow$ Protein, Protein $\rightarrow$ RNA, Protein $\rightarrow$ DNA 
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.4]{1970.png}
+\end{figure}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Three Categories Now\footnote{1970}}
+We have three categories defined as followed
+\begin{itemize}
+    \item General Transfer 
+    \item Special Transfer
+    \item Unknown Transfer
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=0.7]{1.png}
+\includegraphics[scale=0.7]{2.png}
+\includegraphics[scale=0.7]{3.png}
+\caption{General, Special and Unkown Transfer respectively}
+    
+\end{figure}
+
+\end{frame}
+\begin{frame}
+    \begin{exampleblock}{}
+        So far, however, there is no evidence for the
+        first two of these except in a cell infected with an RNA
+        virus. In such a cells the central dogma demands that at
+        least one of the first two special transfers should occur this statement, incidentally, shows the power of the
+        central dogma in making theoretical predictions.
+    \end{exampleblock}
+\end{frame}
+
 \end{document}
