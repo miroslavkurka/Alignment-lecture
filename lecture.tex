@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \usepackage{graphicx}
 \usepackage{listings}
-\usepackage{fontspec}
+
 \usepackage{xcolor}
 \usepackage{amsmath}
 
@@ -10,42 +10,14 @@
 \DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{4} % for bold
 \DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{4}  % for normal
 
-% Custom colors
-\definecolor{deepblue}{rgb}{0,0,0.5}
-\definecolor{deepred}{rgb}{0.6,0,0}
-\definecolor{deepgreen}{rgb}{0,0.5,0}
-% Python style for highlighting
-\newcommand\pythonstyle{\lstset{
-language=Python,
-basicstyle=tiny,
-morekeywords={self},              % Add keywords here
-keywordstyle=\ttb\color{deepblue},
-emph={MyClass,__init__},          % Custom highlighting
-emphstyle=\ttb\color{deepred},    % Custom highlighting style
-stringstyle=\color{deepgreen},
-frame=tb,                         % Any extra options here
-showstringspaces=false
-}}
-% Python environment
-\lstnewenvironment{python}[1][]
-{
-\pythonstyle
-\lstset{#1}
-}
-{}
 
-% Python for external files
-\newcommand\pythonexternal[2][]{{
-\pythonstyle
-\lstinputlisting[#1]{#2}}}
-
-% Python for inline
-\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
 
 \title{Sequence Alignment}
 \author{M. Kurka} 
 \usetheme{Frankfurt}
 \usecolortheme{spruce}
+\setbeamertemplate{itemize/enumerate body begin}{\small}
+
 \begin{document}
 
 \maketitle
@@ -56,42 +28,64 @@ showstringspaces=false
     \item Scoring System 
     \item Needleman-Wunsch Algorithm
     \item Smith-Waterman Algorithm
-    \item What to do if more? 
-    \item Conclusion
+    \item Situation Today
 \end{itemize}
 \end{frame}
 
 \section{Rationale Behind}
 \begin{frame}
 \frametitle{Why is it useful}
+\begin{itemize}
+    \item Homology search
+    \item Genetic diversity
+    \item Active sites, Reading frames
+\end{itemize}
 \end{frame}
 
 \begin{frame}
  \frametitle{Keeping Scores}
+ \begin{itemize}
+     \item mathematically describe similarity
+     \item selecting weights 
+    \begin{itemize}
+        \item BLOSUMXY
+        \item mathematical (log likelihood)
+    \end{itemize}
+ \end{itemize}
 
 \end{frame}
 
 \section{Needleman-Wunsch Algorithm}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Needleman-Wunsch Algorithm}
-\pythonexternal[language=Python]{nw_alg.py}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{srpc.png}
+    
+\end{figure}
 \end{frame}
 
-
+\begin{frame}[fragile]
+    \frametitle{Needleman-Wunsch Algorithm}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{mat.png}
+\end{figure}
+\end{frame}
 
 \section{Smith-Waterman Algorithm}
 \begin{frame}
     
-
+\frametitle{Smith-Waterman Algorithm}
 \begin{itemize}
-    \item took 10 years do develop
+    \item took 10 years to develop
     \item minor change
 \end{itemize}
 \[
 matrix[\, i \,][\, j \,]=max
 \begin{cases}
-    matrix[i-1][j-1] + s(x,y) & ,kde \: x \:je\: seq1[i]\: a \:seq2][j] \\
+    matrix[i-1][j-1] + s(x,y)\\
     matrix[i-1][\, j\, ] - 1
     \\ matrix[\, i\,][j-1] -1 
     \\ 0
@@ -107,5 +101,21 @@ matrix[\, i \,][\, j \,]=max
 
 
 
+\section{Situation Today}
+\begin{frame}
+    \frametitle{How is it done in practice}
+    \begin{itemize}
+        \item Both algorithms are $O(mn)$ and provably correct
+        \item Genome of organsims are really long
+        \item Poses a challenge $\rightarrow$ Heuristics 
+        \begin{itemize}
+            \item BLAST 
+            \item FASTA 
+        \end{itemize}
+        
+    \end{itemize}
 
+    
+
+\end{frame}
 \end{document}
